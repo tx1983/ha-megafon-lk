@@ -103,6 +103,10 @@ response headers.
 - `x-cabinet-*` parameters are bound to your device/account; if MegaFon ever
   revokes them you will need to paste fresh ones.
 
+## Disclaimer
+
+This project is not affiliated with or endorsed by MegaFon. Use at your own risk.
+
 ## Support the project
 
 If this integration saves you time, you can
