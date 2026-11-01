@@ -26,7 +26,7 @@
       },
       "reauth_confirm": {
         "title": "Re-authentication required",
-        "description": "The MegaFon session has expired. Press Submit — an SMS with a new code will be sent to your number."
+        "description": "The MegaFon session has expired — for example, it is invalidated when you log into lk.megafon.ru on another device. Press Submit — an SMS with a new code will be sent to your number."
       },
       "reauth_otp": {
         "title": "SMS code",

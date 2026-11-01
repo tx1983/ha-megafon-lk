@@ -107,6 +107,15 @@ response headers.
 
 This project is not affiliated with or endorsed by MegaFon. Use at your own risk.
 
+## Known issues
+
+- **Logging into lk.megafon.ru from another device (or another browser)
+  invalidates the integration's session** — MegaFon keeps one active web
+  session per account. The integration will then request re-authentication:
+  press **Submit** and enter the new SMS code. If you use the web personal
+  account regularly, consider doing it on the same device/browser you got
+  the x-cabinet parameters from, or simply re-auth via SMS when needed.
+
 ## Support the project
 
 If this integration saves you time, you can
