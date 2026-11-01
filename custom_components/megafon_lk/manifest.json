@@ -1,0 +1,12 @@
+{
+  "domain": "megafon_lk",
+  "name": "MegaFon",
+  "codeowners": ["@tx1983"],
+  "config_flow": true,
+  "documentation": "https://github.com/tx1983/ha-megafon-lk",
+  "integration_type": "service",
+  "iot_class": "cloud_polling",
+  "issue_tracker": "https://github.com/tx1983/ha-megafon-lk/issues",
+  "requirements": [],
+  "version": "1.0.0"
+}

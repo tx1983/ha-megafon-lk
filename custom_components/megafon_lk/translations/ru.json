@@ -1,0 +1,65 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Вход в МегаФон",
+        "description": "Номер телефона + три заголовка x-cabinet-*: откройте lk.megafon.ru, DevTools → Network → любой запрос к api.megafon.ru → скопируйте значения x-cabinet-check-info / x-cabinet-id-param / x-cabinet-validation-param (или вставьте запрос целиком как cURL — UUID подхватятся автоматически).",
+        "data": {
+          "phone": "Номер телефона",
+          "cabinet_params": "Заголовки x-cabinet-* или cURL"
+        }
+      },
+      "otp": {
+        "title": "Код из SMS",
+        "description": "Введите код из SMS.",
+        "data": {"otp": "Код"}
+      },
+      "cookie": {
+        "title": "Сессия из браузера (запасной путь)",
+        "description": "Используется, если SMS-флоу упёрся в капчу или запросам данных всё же нужны браузерные заголовки. Вставьте заголовок Cookie и три заголовка x-cabinet-* из DevTools.",
+        "data": {
+          "cookie": "Cookie",
+          "check_info": "x-cabinet-check-info",
+          "id_param": "x-cabinet-id-param",
+          "validation_param": "x-cabinet-validation-param"
+        }
+      },
+      "reauth_confirm": {
+        "title": "Требуется повторная авторизация",
+        "description": "Сессия МегаФона истекла. Нажмите «Отправить» — на номер придёт SMS с новым кодом."
+      },
+      "reauth_otp": {
+        "title": "Код из SMS",
+        "description": "Введите код из SMS.",
+        "data": {"otp": "Код"}
+      }
+    },
+    "error": {
+      "cannot_connect": "Не удалось подключиться к МегаФон",
+      "invalid_auth": "Сессия недействительна или истекла",
+      "invalid_phone": "Номер отклонён (не абонент МегаФон?)",
+      "invalid_otp": "Неверный или просроченный код из SMS",
+      "invalid_headers": "Нужны все три UUID x-cabinet-* — вставьте заголовки или запрос целиком (cURL)"
+    },
+    "abort": {
+      "already_configured": "Эта учётная запись уже настроена",
+      "reauth_successful": "Повторная авторизация прошла успешно"
+    }
+  },
+  "options": {
+    "step": {"init": {"data": {"scan_interval": "Интервал обновления, минут"}}}
+  },
+  "entity": {
+    "sensor": {
+      "balance": {"name": "Баланс"},
+      "cashback": {"name": "Кешбэк"},
+      "minutes": {"name": "Остаток минут"},
+      "internet": {"name": "Остаток интернета"},
+      "sms": {"name": "Остаток SMS"},
+      "tariff": {"name": "Тариф"},
+      "tariff_price": {"name": "Стоимость тарифа"},
+      "next_charge_date": {"name": "Следующее списание"},
+      "next_charge_amount": {"name": "Сумма следующего списания"}
+    }
+  }
+}

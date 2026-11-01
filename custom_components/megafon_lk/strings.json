@@ -1,0 +1,65 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "MegaFon sign in",
+        "description": "Phone number plus the three x-cabinet-* headers: open lk.megafon.ru, DevTools → Network → any request to api.megafon.ru → copy the values of x-cabinet-check-info / x-cabinet-id-param / x-cabinet-validation-param (or paste the whole request as cURL — the UUIDs are parsed automatically).",
+        "data": {
+          "phone": "Phone number",
+          "cabinet_params": "x-cabinet-* headers or cURL"
+        }
+      },
+      "otp": {
+        "title": "SMS code",
+        "description": "Enter the code from the SMS.",
+        "data": {"otp": "Code"}
+      },
+      "cookie": {
+        "title": "Browser session (fallback)",
+        "description": "Used when the SMS flow hits a captcha or the data calls still need browser headers. Paste the Cookie header and the three x-cabinet-* headers from DevTools.",
+        "data": {
+          "cookie": "Cookie",
+          "check_info": "x-cabinet-check-info",
+          "id_param": "x-cabinet-id-param",
+          "validation_param": "x-cabinet-validation-param"
+        }
+      },
+      "reauth_confirm": {
+        "title": "Re-authentication required",
+        "description": "The MegaFon session has expired. Press Submit — an SMS with a new code will be sent to your number."
+      },
+      "reauth_otp": {
+        "title": "SMS code",
+        "description": "Enter the code from the SMS.",
+        "data": {"otp": "Code"}
+      }
+    },
+    "error": {
+      "cannot_connect": "Failed to connect to MegaFon",
+      "invalid_auth": "The session is invalid or expired",
+      "invalid_phone": "The number was rejected (not a MegaFon subscriber?)",
+      "invalid_otp": "Wrong or expired SMS code",
+      "invalid_headers": "All three x-cabinet-* UUIDs are required — paste the headers or the request as cURL"
+    },
+    "abort": {
+      "already_configured": "This account is already configured",
+      "reauth_successful": "Re-authentication was successful"
+    }
+  },
+  "options": {
+    "step": {"init": {"data": {"scan_interval": "Update interval, minutes"}}}
+  },
+  "entity": {
+    "sensor": {
+      "balance": {"name": "Balance"},
+      "cashback": {"name": "Cashback"},
+      "minutes": {"name": "Minutes left"},
+      "internet": {"name": "Internet left"},
+      "sms": {"name": "SMS left"},
+      "tariff": {"name": "Tariff"},
+      "tariff_price": {"name": "Tariff price"},
+      "next_charge_date": {"name": "Next charge date"},
+      "next_charge_amount": {"name": "Next charge amount"}
+    }
+  }
+}
